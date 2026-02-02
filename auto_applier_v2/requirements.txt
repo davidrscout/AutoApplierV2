@@ -1,0 +1,15 @@
+playwright
+playwright-stealth
+customtkinter
+sqlalchemy
+openpyxl
+requests
+PyPDF2
+pypdf
+pandas
+fastapi
+uvicorn
+authlib
+PyJWT
+openai
+httpx

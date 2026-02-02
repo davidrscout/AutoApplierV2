@@ -1,0 +1,6 @@
+playwright>=1.49.0
+PySide6>=6.8.0.2
+requests>=2.32.3
+openpyxl>=3.1.5
+pdfplumber>=0.11.4
+httpx>=0.27.0

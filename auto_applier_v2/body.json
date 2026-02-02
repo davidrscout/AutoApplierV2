@@ -1,0 +1,6 @@
+﻿{
+  "model": "openclaw",
+  "messages": [
+    { "role": "user", "content": "di OK" }
+  ]
+}
