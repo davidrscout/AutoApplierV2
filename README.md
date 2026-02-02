@@ -72,8 +72,8 @@ python -m playwright install
 
 ### 3. Prepare your CVs
 
--   Place your PDF resumes in the `cv/` folder.
--   The bot will read these to understand your profile.
+-   Place your PDF resumes in the **`cv/`** folder.
+-   The bot will read these to understand your profile and generate relevant answers.
 
 ## ⚙️ Configuration
 
@@ -89,9 +89,12 @@ $env:CLAW_MODEL="openclaw"
 $env:CLAW_TIMEOUT_SECONDS="60"
 ```
 
-### Local Config
+### Keywords & Search
 
--   **`config/keywords.txt`**: Add search keywords (one per line).
+-   **`config/keywords.txt`**: Add your search keywords here (one per line).
+    -   *If this file is empty*, the bot will try to **generate keywords automatically** by analyzing your CVs with the LLM.
+    -   *Recommended:* Add manual keywords for better control (e.g., "Cybersecurity Analyst", "Pentester", "Red Team").
+
 -   **`auto_applier_v2/data/settings.json`**: Application stores preferences here.
 
 ## 🚀 Usage
