@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+.env.local
+
+# Data & Config
+data/*.xlsx
+data/*.csv
+data/*.json
+config/browser_profile/
+config/cv_context.json
+cv/*.pdf
+cv/**/*.pdf
+output/*.txt
+output/*.pdf
+
+# IDE
+.idea/
+.vscode/
+*.swp
