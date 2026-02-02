@@ -4,14 +4,27 @@
 
 AutoApplier V2 automates the tedious process of finding and applying for jobs on platforms like LinkedIn. It uses an LLM (Large Language Model) to intelligently parse job descriptions, match them against your CV, generate cover letters, and fill out application forms autonomously.
 
+## ⚠️ DISCLAIMER & WARNING
+
+**This software is for EDUCATIONAL PURPOSES ONLY.**
+
+Automated scraping and botting may violate the Terms of Service (ToS) of platforms like LinkedIn. Using this tool may result in:
+-   Temporary or permanent account suspension.
+-   IP bans.
+-   Legal action in some jurisdictions.
+
+**Use at your own risk.** The authors are not responsible for any consequences resulting from the use of this tool. We strongly recommend **not** using your primary professional account for testing.
+
+---
+
 ## ✨ Features
 
 -   **Autonomous Job Search:** Scrapes job listings based on your profile and preferences.
 -   **Smart Matching:** Uses LLM to evaluate if a job matches your skills before applying.
 -   **Intelligent Form Filling:** Answers application questions contextually based on your CV/Bio data.
 -   **Cover Letter Generation:** Generates tailored cover letters on the fly.
--   **OpenClaw Gateway Support:** Can connect to a remote OpenClaw gateway for secure, keyless LLM access.
--   **Stealth Mode:** Uses local browser profiles to mimic human behavior and avoid detection.
+-   **OpenClaw Gateway Support:** Connects to a remote OpenClaw gateway for secure, keyless LLM access.
+-   **Stealth Mode:** Uses local browser profiles to mimic human behavior.
 
 ## 🛠️ Setup
 
@@ -20,28 +33,53 @@ AutoApplier V2 automates the tedious process of finding and applying for jobs on
 -   Python 3.11+
 -   Chrome / Chromium browser
 
-### Installation
+### 1. Environment Setup (Recommended)
 
-1.  Clone the repository:
-    ```bash
-    git clone https://github.com/davidrscout/AutoApplierV2.git
-    cd AutoApplierV2
-    ```
+We strongly recommend using a virtual environment (`venv`) or `uv` to keep dependencies isolated.
 
-2.  Install dependencies:
-    ```bash
-    pip install -r requirements.txt
-    python -m playwright install
-    ```
+#### Option A: Using `venv` (Standard)
 
-3.  Set up your CVs:
-    -   Place your PDF resumes in the `cv/` folder (create it if missing).
+```bash
+# Create virtual environment
+python -m venv venv
+
+# Activate (Windows)
+.\venv\Scripts\Activate
+
+# Activate (Mac/Linux)
+source venv/bin/activate
+```
+
+#### Option B: Using `uv` (Faster)
+
+```bash
+# Install uv
+pip install uv
+
+# Create and sync venv
+uv venv
+uv pip sync requirements.txt
+```
+
+### 2. Install Dependencies
+
+Once your environment is active:
+
+```bash
+pip install -r requirements.txt
+python -m playwright install
+```
+
+### 3. Prepare your CVs
+
+-   Place your PDF resumes in the `cv/` folder.
+-   The bot will read these to understand your profile.
 
 ## ⚙️ Configuration
 
-### Environment Variables (for OpenClaw Gateway)
+### LLM Gateway (OpenClaw)
 
-If using a remote LLM gateway (recommended):
+This tool is designed to work with an OpenClaw Gateway to avoid exposing API keys locally. Set these environment variables:
 
 ```powershell
 # Windows PowerShell
@@ -54,19 +92,15 @@ $env:CLAW_TIMEOUT_SECONDS="60"
 ### Local Config
 
 -   **`config/keywords.txt`**: Add search keywords (one per line).
--   **`data/settings.json`**: Application stores preferences here.
+-   **`auto_applier_v2/data/settings.json`**: Application stores preferences here.
 
 ## 🚀 Usage
 
-Run the main application:
+**Important:** Run the application from the repository root directory.
 
 ```bash
-python main.py
+python auto_applier_v2/main.py
 ```
-
-## ⚠️ Disclaimer
-
-This tool is for **educational purposes only**. Automated scraping and applying may violate the Terms of Service of some platforms. Use responsibly and at your own risk.
 
 ---
 *Created by [DavidRScout](https://github.com/davidrscout)*
